@@ -20,11 +20,11 @@
 	}
 	//로그인체크
 	function loginchk(){
-		access(isset($_SESSION['member']),"로그인후애 이용가능합니다");
+		access(!isset($_SESSION['member']),"로그인후애 이용가능합니다");
 	}
 	//회원체크
 	function memberchk(){
-		access(!isset($_SESSION['member']),"회원은 이용이 불가능합니다");
+		access(isset($_SESSION['member']),"회원은 이용이 불가능합니다");
 	}
 	//autoload
 	function __autoload ($className) {
@@ -40,7 +40,6 @@
 				$file .= $className.".php";
 			break;
 		}
-		access(!file_exists($file),"잘못된 접근입니다."); //예외처리
 		require_once($file);
 	}
 	//프린트pre

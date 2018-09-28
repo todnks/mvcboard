@@ -1,4 +1,4 @@
-<?php 
+ <?php 
 
 	class Controller{
 
@@ -21,7 +21,6 @@
 		}
 
 		protected function index(){
-			if(isset($_POST['action'])) $this->model->action();
 			$method = isset($this->param->page) ? $this->param->page : "basic";
 			if(method_exists($this,$method)) $this->$method();
 			$this->header();
