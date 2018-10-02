@@ -8,5 +8,6 @@
 
 		function view(){
 			$this->view = $this->model->getview();
+			
 		}
 	}

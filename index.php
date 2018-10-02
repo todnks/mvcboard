@@ -7,6 +7,7 @@
 	const _CTR = _APP."controller/";
 	const _VIEW = _APP."view/";
 	const _TEM = _VIEW."template/";
+	const _DATA = _APP."data/";
 	require_once(_CORE."lib.php");
 
 	App::start();

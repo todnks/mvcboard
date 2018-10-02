@@ -10,6 +10,17 @@
 			return $this->fetch();
 		}
 
+		function memberDelete(){
+			$file = $this->fetchAll("SELECT * FROM board where midx='{$_SESSION['member']->idx}'");
+			foreach ($file as $data) {
+				@unlink(_DATA.$data->change_name);
+			}
+			$this->sql = "
+					DELETE FROM memeber where idx='{$_POST['idx']}';
+					DELETE FROM board where midx='{$_POST['idx']}';
+			";
+			return $this->query();
+		}
 
 		function process(){
 			$this->action = $_POST['action'];
