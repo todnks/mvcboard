@@ -7,7 +7,7 @@
 	//페이지 이동
 	function move($url = false){
 		echo "<script>";
-		echo $url ? "localhost.htef='{$msg}'" : "history.back()";
+			echo $url ? "location.href='{$url}'" : "history.back();";
 		echo "</script>";
 		exit;
 	}
